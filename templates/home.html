@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Breast Cancer Image Classification</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff79a1, #833471);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: relative;
+        }
+
+        div {
+            background-color: rgba(252, 162, 162, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        div:hover {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            color: #002741;
+            margin-bottom: 20px;
+            font-size: 24px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input[type="file"] {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            background-color: #ecf0f1;
+            color: #3498db;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        input[type="file"]:hover {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        input[type="submit"] {
+            padding: 15px 20px;
+            background-color: #f6b046;
+            color: #0e0e0e;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        .content-box-top-left {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .content-box-top-left:hover {
+            transform: scale(1.05);
+        }
+
+        .content-box-top-right {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .content-box-top-right:hover {
+            transform: scale(1.05);
+        }
+
+        .content-box-bottom-right {
+            position: absolute;
+            bottom: 10px;
+            right: 12px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .content-box-bottom-right:hover {
+            transform: scale(1.05);
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: #34495e;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Breast Cancer Image Classification</h2>
+        <form action="{{ url_for('predict_cancer') }}" enctype="multipart/form-data" method="POST">
+            <input name="file" type="file" />
+            <input type="submit" value="Show Results" />
+        </form>
+    </div>
+
+    <div class="content-box-top-left">
+        <h3>What is Breast Cancer?</h3>
+        <p>
+            Breast cancer is a type of cancer that starts in the cells of the breast. It can occur in both men and women,
+            but it is far more common in women.
+        </p>
+    </div>
+
+    <div class="content-box-top-right">
+        <h3>To Know more about Breast Cancer....</h3>
+        <p>
+            <a href="https://www.cancer.org/cancer/types/breast-cancer/about/what-is-breast-cancer.html"
+            class="cta-button" target="_blank">Click here</a>
+        </p>
+    </div>
+
+    <div class="content-box-bottom-right">
+        <h3>How This Project Helps...</h3>
+        <p>
+            Our breast cancer image classification project utilizes advanced technology to assist in the early detection
+            of breast cancer. By analyzing medical images, it provides valuable insights that can aid healthcare professionals
+            in making informed decisions and improving patient outcomes.
+        </p>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; Team 4 YOU!</p>
+    </footer>
+</body>
+</html>

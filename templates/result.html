@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <title>Reports</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #3498db, #8e44ad);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #fff;
+            text-align: center;
+            position: relative;
+        }
+
+        body::before {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.2;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            width: 80%;
+        }
+
+        .negative {
+            color: #e74c3c;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .positive {
+            color: #3498db;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .result-message {
+            font-size: 24px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .progress-container {
+            margin-top: 20px;
+        }
+
+        .progress {
+            height: 20px;
+            background-color: #2ecc71; /* Green color for progress */
+            width: 0; /* Initial width set to 0 */
+            border-radius: 8px;
+            transition: width 1s ease-in-out; /* Smooth transition for width changes */
+        }
+
+        .progress-label {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 18px;
+            text-decoration: none;
+            color: #3498db;
+            background-color: #fff;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        .icon {
+            font-size: 48px;
+            margin-right: 10px;
+        }
+
+        .thank-you-message {
+            font-size: 18px;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: #34495e;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="{{ 'positive' if ans == 'Positive' else 'negative' }}">
+            <span class="icon">{{ '✅' if ans == 'Positive' else '🎗️' }}</span>
+            {{ ans }}
+        </h1>
+    </div>
+    <div class="container">
+        <p class="result-message">
+            {% if ans == 'Positive' %}
+            Patient is in stable condition. He/She must continue practicing a healthy lifestyle and schedule regular check-ups for preventive care.
+            {% else %}
+            Patient must consult with a healthcare professional for further evaluation and guidance.
+            {% endif %}
+        </p>
+    </div>
+    <div class="progress-container">
+        <div class="progress" style="width: 84%;"></div>
+        <p class="progress-label">Estimated Chances of Cure: 84%</p>
+    </div>
+    <div class="container">
+        <a href="https://forms.gle/6VTSawFokDc22qie8" target="_blank" class="cta-button">Suggestions!</a>
+        <a href="https://forms.gle/Sv5TLhqHVrwnDi5Z8" target="_blank" class="cta-button">Feedback for patients!</a>
+        <p class="thank-you-message">Thank You for trusting our system! We assure you we consider your suggestions very seriously.</p>
+    </div>
+    <footer class="footer">
+        <p>&copy; Team 4 YOU!</p>
+    </footer>
+</body>
+</html>
