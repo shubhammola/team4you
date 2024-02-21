@@ -3,11 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="description" content="Explore our Breast Cancer Image Classification project and learn how we leverage advanced technology for early detection. Understand the significance of analyzing medical images to provide valuable insights, assisting healthcare professionals in making informed decisions and improving patient outcomes. Join us in the fight against breast cancer by discovering the latest advancements and insights in breast cancer diagnosis.">
+    <link rel="preload" href="/static/image/cancer.jpg" as="image">
     <title>Breast Cancer Image Classification</title>
     <style>
         body {
+            background: url(/static/image/cancer.jpg);
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
@@ -15,7 +17,6 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background: linear-gradient(135deg, #ff79a1, #833471);
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -85,7 +86,7 @@
             position: absolute;
             top: 10px;
             left: 10px;
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba(255, 234, 175, 0.9);
             padding: 15px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -101,7 +102,7 @@
             position: absolute;
             top: 10px;
             right: 10px;
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba(255, 234, 175, 0.9);
             padding: 15px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -113,11 +114,27 @@
             transform: scale(1.05);
         }
 
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 18px;
+            text-decoration: none;
+            color: #090808;
+            background-color: #f9896d;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #f37fa3;
+            color: #050505;
+        }
+
         .content-box-bottom-right {
             position: absolute;
             bottom: 10px;
             right: 12px;
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba(255, 234, 175, 0.9);
             padding: 15px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -130,11 +147,11 @@
         }
 
         .footer {
-            position: absolute;
+            position: fixed;
             bottom: 0;
             width: 100%;
-            background-color: #34495e;
-            color: #fff;
+            background-color: #3a95f1;
+            color: #100f0f;
             text-align: center;
         }
     </style>

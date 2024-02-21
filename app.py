@@ -11,7 +11,7 @@ import os
 
 
 
-app = Flask(__name__)
+app = Flask(__name__,static_folder='static', static_url_path='/static')
 
 def detect_cancer(img):
     modelName_1 = 'CM_weights-010-0.3063.hdf5'

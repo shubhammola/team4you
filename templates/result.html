@@ -3,14 +3,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preload" href="/static/image/results.jpg" as="image">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <title>Reports</title>
     <style>
         body {
+            background-image: url(/static/image/results.jpg);
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #3498db, #8e44ad);
             margin: 0;
             padding: 0;
             display: flex;
@@ -18,13 +18,15 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            color: #fff;
             text-align: center;
             position: relative;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
         }
 
         body::before {
-            position: fixed;
+            position: relative;
             top: 0;
             left: 0;
             width: 100%;
@@ -33,7 +35,7 @@
         }
 
         .container {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: #d6d5d4;
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
@@ -61,20 +63,26 @@
 
         .progress-container {
             margin-top: 20px;
+            background-color: #f8ca9c;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            width: 80%;
         }
 
         .progress {
             height: 20px;
-            background-color: #2ecc71; /* Green color for progress */
-            width: 0; /* Initial width set to 0 */
+            background-color: #2ecc71;
+            width: 0;
             border-radius: 8px;
-            transition: width 1s ease-in-out; /* Smooth transition for width changes */
+            transition: width 1s ease-in-out;
         }
 
         .progress-label {
             margin-top: 10px;
             font-size: 16px;
-            color: #fff;
+            color: #050505;
         }
 
         .cta-button {
@@ -100,7 +108,7 @@
 
         .thank-you-message {
             font-size: 18px;
-            color: #fff;
+            color: #080808;
             margin-top: 20px;
         }
 
