@@ -50,6 +50,63 @@
             align-items: center;
         }
 
+        #login-form {
+            background-color: rgba(249, 189, 145, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            height: 500px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #error-message {
+            color: red; 
+            display: none;
+            align-items: center;
+            text-align: center;
+            font-size: 14px;
+
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            padding: 15px;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            background-color: #ecf0f1;
+            color: #3498db;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        input[type="text"]:hover,
+        input[type="password"]:hover {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        input[type="button"] {
+            padding: 15px 20px;
+            background-color: #f6b046;
+            color: #0e0e0e;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        input[type="button"]:hover {
+            background-color: #2980b9;
+        }
+
+
         input[type="file"] {
             margin-bottom: 20px;
             padding: 15px;
@@ -157,7 +214,20 @@
     </style>
 </head>
 <body>
-    <div>
+    <div id="login-form">
+        <h2>Login</h2>
+        <p>Access given only to health professionals</p>
+        <p id="error-message">Invalid username or password.</p>
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <input type="button" onclick="validateLogin()" value="Login"></input>
+        </form>
+    </div>
+
+    <div id="content" style="display: none">
         <h2>Breast Cancer Image Classification</h2>
         <form action="{{ url_for('predict_cancer') }}" enctype="multipart/form-data" method="POST">
             <input name="file" type="file" />
@@ -193,5 +263,21 @@
     <footer class="footer">
         <p>&copy; Team 4 YOU!</p>
     </footer>
+
+    <script>
+        function validateLogin() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            // Perform simple validation
+            if (username === "doctor" && password === "patient") {
+                // Show content if login successful
+                document.getElementById("login-form").style.display = "none";
+                document.getElementById("content").style.display = "block";
+            } else {
+                // Display error message
+                document.getElementById("error-message").style.display = "block";
+            }
+        }
+    </script>
 </body>
 </html>
